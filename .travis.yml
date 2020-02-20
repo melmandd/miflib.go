@@ -9,8 +9,8 @@ jobs:
 script:
 - make check
 - make build
-- go get github.com/xorcare/miflib.go
-- go get github.com/xorcare/miflib.go/cmd/miflib
+- go get github.com/melmandd/miflib.go
+- go get github.com/melmandd/miflib.go/cmd/miflib
 - miflib --help
 
 after_success:
