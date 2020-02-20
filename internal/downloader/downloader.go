@@ -30,9 +30,9 @@ type Downloader func(path string, book jd.Book) error
 // DownloadHandlers list of handlers used.
 var DownloadHandlers = []Downloader{
 	downloadCover,
-	downloadAudiobook,
+	//downloadAudiobook,
 	downloadBook,
-	downloadDemo,
+	//downloadDemo,
 	downloadPhotos,
 }
 
