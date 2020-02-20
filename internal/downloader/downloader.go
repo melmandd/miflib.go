@@ -16,7 +16,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xorcare/miflib.go/internal/jd"
+	"github.com/melmandd/miflib.go/internal/jd"
 )
 
 func init() {
