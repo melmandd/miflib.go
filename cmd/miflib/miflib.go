@@ -19,8 +19,8 @@ import (
 	"github.com/urfave/cli/v2"
 	"golang.org/x/net/publicsuffix"
 
-	"github.com/xorcare/miflib.go/internal/downloader"
-	"github.com/xorcare/miflib.go/internal/jd"
+	"github.com/melmandd/miflib.go/internal/downloader"
+	"github.com/melmandd/miflib.go/internal/jd"
 )
 
 // Version of the application is installed from outside during assembly.
