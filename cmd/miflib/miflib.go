@@ -15,6 +15,7 @@ import (
 	"path"
 	"runtime"
 	"sync"
+	"strings"
 
 	"github.com/urfave/cli/v2"
 	"golang.org/x/net/publicsuffix"
@@ -155,6 +156,7 @@ func worker(wg *sync.WaitGroup, books <-chan jd.Book, basepath string) {
 			book := payload.(jd.Book)
 
 			basepath = path.Join(basepath, fmt.Sprintf("%05d %s", book.ID, book.Title))
+			basepath = strings.Trim(basepath, ":")
 			if err := os.MkdirAll(basepath, 0755); err != nil {
 				log.Fatal(err)
 			}
@@ -163,6 +165,7 @@ func worker(wg *sync.WaitGroup, books <-chan jd.Book, basepath string) {
 
 			if _, err := os.Stat(filepath); !os.IsNotExist(err) {
 				log.Println("book is already downloaded earlier:", book.Title, book.ID)
+				basepath = "books"
 				return
 			}
 
