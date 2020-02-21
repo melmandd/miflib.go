@@ -161,7 +161,7 @@ func worker(wg *sync.WaitGroup, books <-chan jd.Book, basepath string) {
 			basepath = strings.Replace(basepath, "\", "", -1)
 			basepath = strings.Replace(basepath, "/", "", -1)
 			basepath = strings.Replace(basepath, "*", "", -1)
-			basepath = strings.Replace(basepath, """, "", -1)
+			basepath = strings.Replace(basepath, '"', "", -1)
 			basepath = strings.Replace(basepath, "<", "", -1)
 			basepath = strings.Replace(basepath, ">", "", -1)
 			basepath = strings.Replace(basepath, "|", "", -1)
