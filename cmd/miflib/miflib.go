@@ -157,6 +157,14 @@ func worker(wg *sync.WaitGroup, books <-chan jd.Book, basepath string) {
 
 			basepath = path.Join(basepath, fmt.Sprintf("%05d %s", book.ID, book.Title))
 			basepath = strings.Replace(basepath, ":", "", -1)
+			basepath = strings.Replace(basepath, "?", "", -1)
+			basepath = strings.Replace(basepath, "\", "", -1)
+			basepath = strings.Replace(basepath, "/", "", -1)
+			basepath = strings.Replace(basepath, "*", "", -1)
+			basepath = strings.Replace(basepath, """, "", -1)
+			basepath = strings.Replace(basepath, "<", "", -1)
+			basepath = strings.Replace(basepath, ">", "", -1)
+			basepath = strings.Replace(basepath, "|", "", -1)
 			if err := os.MkdirAll(basepath, 0755); err != nil {
 				log.Fatal(err)
 			}
