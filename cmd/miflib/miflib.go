@@ -181,7 +181,7 @@ func worker(wg *sync.WaitGroup, books <-chan jd.Book, basepath string) {
 			if encoder.Encode(book) != nil {
 				log.Fatal(err)
 			}
-
+			basepath = "books"
 			return
 		}(book)
 
