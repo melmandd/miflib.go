@@ -167,6 +167,7 @@ func downloadFile(url, filename string) error {
 	}
 	
 	filename = strings.Replace(filename, "?", "", -1)
+	filename = strings.Replace(filename, "*", "", -1)
 	err = os.MkdirAll(path.Dir(filename), 0755)
 	if err != nil {
 		return err
